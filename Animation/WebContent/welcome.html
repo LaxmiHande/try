@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+
+<script src="http://code.jquery.com/jquery-1.9.0.js"></script>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+		$("#addbtn").click( function(){			
+			
+			$("#mydiv").append("<img src='images.jpg' width='100px' height='100px'/>").fadeIn("slow");
+		});
+		
+
+		$("#showbtn").click(function() {
+
+			$("#mydiv").toggle(500);
+			$("img").css("border", "solid red");
+			$("img").animate({
+				opacity : 0.25,
+			}, 5000, function() {
+				
+			});
+
+		});
+
+		$("table#stud tr").mouseover(addcolor);
+		$("table#stud tr").mouseout(removecolor);
+
+		function addcolor() {
+			$(this).css({
+				'background-color' : 'yellow'
+			});
+		};
+		function removecolor() {
+			$(this).css({
+				'background-color' : 'white'
+			});
+		};
+		
+	});
+</script>
+</head>
+<body>
+
+
+	<h1 id="desc">Wel-come dear</h1>
+
+
+
+	<input type="button" id="addbtn" value="Add image" />
+
+	<br>
+	<div id="mydiv">
+		<img alt="" src="images.jpg" width="100px" height="100px" />
+	</div>
+
+	<input type="button" id="showbtn" value="Show/Hide image" />
+
+	<br>
+	<br>
+	<table align="left" border="1" id="stud">
+		<tr>
+			<th>Roll</th>
+			<th>Name</th>
+		</tr>
+		<tr>
+			<th>10</th>
+			<th>pma</th>
+		</tr>
+		<tr>
+			<th>20</th>
+			<th>uma</th>
+		</tr>
+		<tr>
+			<th>30</th>
+			<th>abhi</th>
+		</tr>
+
+	</table>
+
+
+
+
+</body>
+</html>
